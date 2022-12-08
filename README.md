@@ -4,15 +4,15 @@
 
 
 # Folder Structure
-> --src:\
->|----------- bin\
->|----------- components\
->|----------- controllers\
->|----------- models\
->|----------- public\
->|----------- routes\
->|----------- services\
->|----------- view\
->|---------------layouts\
->|---------------home.hdb\
->|----------- app.js
+    --src:\
+    |----------- bin:\
+    |----------- components:\
+    |----------- controllers:\
+    |----------- models:\
+    |----------- public:\
+    |----------- routes:\
+    |----------- services:\
+    |----------- view:\
+    |---------------layouts\
+    |---------------home.hdb\
+    |----------- app.js
