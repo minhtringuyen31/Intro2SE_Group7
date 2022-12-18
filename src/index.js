@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 
-//set rouuter
+//set router
 const indexRouter = require('./components/home');
 
 
