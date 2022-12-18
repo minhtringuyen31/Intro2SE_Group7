@@ -5,10 +5,23 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 
+
+// connect database
+require('dotenv').config();
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MOGODB_URI);
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error: '));
+db.once('open', function () {
+    console.log('Connected to group 07 database')
+});
+
+
+
+
 //set router
 const indexRouter = require('./components/home');
-
-
 
 // const passport = require('./components/auth/passport');
 
