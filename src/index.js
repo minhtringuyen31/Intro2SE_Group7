@@ -11,6 +11,7 @@ require('dotenv').config();
 
 //set router
 const indexRouter = require('./components/home');
+// const productRouter = require('./components/products');
 
 // const passport = require('./components/auth/passport');
 
@@ -44,6 +45,8 @@ app.use(function (req, res, next) {
 
 
 app.use('/index', indexRouter);
+// app.use('/products', productRouter);
+
 
 
 //passport

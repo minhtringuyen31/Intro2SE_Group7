@@ -1,8 +1,11 @@
+/**
+ * Tạo schema giống với tạo bản khai cấu trúc dữ liệu
+ */
+
 const mongoose = require('mongoose');
 
-
-const productSchema = mongoose.Schema({
-    id:{
+const productSchema = new mongoose.Schema({
+    id: {
         type: String,
         required: 'This field is required.'
     },
@@ -38,7 +41,10 @@ const productSchema = mongoose.Schema({
         type: String,
         required: 'This field is required.'
     }
-})
+},
+    {
+        collection: "product"
+    }
+);
 
 module.exports = mongoose.model('product', productSchema);
-

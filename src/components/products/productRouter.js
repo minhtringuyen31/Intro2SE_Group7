@@ -6,4 +6,4 @@ const productController = require('./productController');
 //     res.
 // })
 
-router.get('/', productController.productList);
+router.get('/', productController.getAllProduct);

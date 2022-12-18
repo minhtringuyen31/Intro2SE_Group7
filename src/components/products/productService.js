@@ -1,32 +1,21 @@
-const productModel = require('./productModel');
+const product = require('./productModel');
 
-const mongoose = require('mongoose');
-mongoose.connect(process.env.MOGODB_URI);
+// lấy dữ liệu
+/**
+ * async()
+ * arrow function
+ * exports = : tham chiếu trong một cùng nhớ mới
+ * exports. : bổ sung phương thức
+ * module.exports vs export cùng trỏ vào một vùng nhớ
+ * promise: --> xử lý các thao tác bất đồng bộ
+ *  - Sync: đồng bộ  chạy theo luồng
+ *  - Async: không theo luồng
+ *  - callback hell: 
+ * js: đơn luồng, nhưng vẫn xử lý đa luồng
+ */
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error: '));
-db.once('open', function () {
-    console.log('Connected to group 07 database to get Product');
-});
 
-// lấy xử lý data
-
-async function insertProductData() {
-    try {
-        await productModel.insertMany([
-            {
-                "id": "PM1",
-                "name": "Bảng phấn mắt các màu cơ bản innisfree Essential Shadow Palette 8.3 ~ 8.7 g",
-                "signature": "Innisfree",
-                "origin": "Hàn Quốc",
-                "factory": "Hàn Quốc",
-                "skin": "",
-                "problem": "",
-                "price": "700000",
-                "img" :""
-            }
-        ]);
-    } catch (error) {
-        console.log('err', + error)
-    }
+exports.getAllProduct = async() =>{
+    const products = await product.find({});
+    return products;
 }
