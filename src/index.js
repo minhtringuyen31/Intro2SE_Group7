@@ -5,8 +5,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 
-//set rouuter
+//set router
 const indexRouter = require('./components/home');
+const productRouter = require('./components/products/productRouter');
 
 
 
@@ -14,7 +15,7 @@ const indexRouter = require('./components/home');
 
 const app = express();
 
-// view engine setup
+// view engine setup   
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -33,15 +34,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use(function (req, res, next) {
-  console.log("res.user");
-  console.log(req.user);
-  res.locals.user = req.user;
-  next();
-});
+// app.use(function (req, res, next) {
+//   console.log("res.user");
+//   console.log(req.user);
+//   res.locals.user = req.user;
+//   next();
+// });
 
 
 app.use('/index', indexRouter);
+app.use('/products', productRouter);
 
 
 //passport
