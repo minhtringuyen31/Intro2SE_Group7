@@ -7,7 +7,7 @@ const session = require('express-session');
 
 //set router
 const indexRouter = require('./components/home');
-
+const authRouter = require ('./components/auth/authRouter');
 
 
 // const passport = require('./components/auth/passport');
@@ -32,7 +32,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use(function (req, res, next) {
   console.log("res.user");
   console.log(req.user);
@@ -43,7 +42,7 @@ app.use(function (req, res, next) {
 
 app.use('/index', indexRouter);
 
-
+app.use('/signup', authRouter);
 //passport
 
 
