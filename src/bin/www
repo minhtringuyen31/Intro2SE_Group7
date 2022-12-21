@@ -3,10 +3,22 @@
 /**
  * Module dependencies.
  */
-
+require('dotenv').config();
+const mongoose = require('mongoose');
 var app = require('../index');
 var debug = require('debug')('hello-express:server');
 var http = require('http');
+
+/**
+ * Get port from environment and store in Express.
+ */
+mongoose.set('strictQuery', true);
+mongoose.connect(process.env.MOGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error: '));
+db.once('open', function () {
+  console.log('Connected to hhman database')
+});
 
 /**
  * Get port from environment and store in Express.

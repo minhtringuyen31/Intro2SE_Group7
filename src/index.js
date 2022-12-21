@@ -5,8 +5,13 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 
+require('dotenv').config();
+
+
+
 //set router
 const indexRouter = require('./components/home');
+
 const authRouter = require ('./components/auth/authRouter');
 
 
@@ -41,6 +46,8 @@ app.use(function (req, res, next) {
 
 
 app.use('/index', indexRouter);
+// app.use('/products', productRouter);
+
 
 app.use('/signup', authRouter);
 //passport
