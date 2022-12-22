@@ -1,16 +1,16 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const authService = require('./authServices');
+const authService = require('./authService');
 
 
-passport.use(new LocalStrategy({ usernameField: 'account' }, async function verify(account, password, cb) {
-    console.log(account);
+passport.use(new LocalStrategy({ usernameField: 'email' }, async function verify(email, password, cb) {
+    console.log(email);
     console.log(password);
-    const user = await authService.logIn(account, password);
+    const user = await authService.signIn(email, password);
     console.log(user);
     if (user) {
         console.log("success");
-        return cb(null, user[0]);
+        return cb(null, user);
     }
     else {
         console.log("failure");
@@ -20,7 +20,7 @@ passport.use(new LocalStrategy({ usernameField: 'account' }, async function veri
 
 passport.serializeUser(function (user, cb) {
     process.nextTick(function () {
-        cb(null, { loginPhone: user.userPhone, loginName: user.userName, loginGender: user.userGender, loginAddress: user.userAddress });
+        cb(null, { loginEmail: user.userEmail, loginName: user.userName, loginAddress: user.userAddress });
     });
 });
 

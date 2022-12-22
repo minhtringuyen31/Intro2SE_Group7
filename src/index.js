@@ -6,8 +6,10 @@ const logger = require('morgan');
 const session = require('express-session');
 
 //set router
+//set router
 const indexRouter = require('./components/home');
 const productRouter = require('./components/products/productRouter');
+const authRouter = require('./components/auth/authRouter');
 
 
 
@@ -44,6 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/index', indexRouter);
 app.use('/products', productRouter);
+app.use('/auth', authRouter);
 
 
 //passport
@@ -76,3 +79,5 @@ app.use(function (err,
 });
 
 module.exports = app;
+
+// create new branch

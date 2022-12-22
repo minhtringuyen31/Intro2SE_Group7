@@ -3,10 +3,10 @@ exports.logInSchema = {
     type: 'object',
     properties:
     {
-        'account': { type: 'string', 'minLength': 10 },
+        email: { type: 'string', 'minLength': 20 },
         password: { type: 'string', 'minLength': 8 }
     },
-    required: ['account', 'password'],
+    required: ['email', 'password'],
     additionalProperties: false
 }
 
@@ -15,12 +15,9 @@ exports.signUpSchema = {
     properties:
     {
         userName: { type: 'string' },
-        userEmail: { type: 'string', 'minLength': 20 },
-        userPhone: { type: 'string', 'minLength': 10 },
-        userPassword: { type: 'string', 'minLength': 8 },
-        userGender: { type: 'string', 'minLength': 1 },
-        userAddress: { type: 'string' }
+        userEmail: { type: 'string', 'minLength': 10 },
+        userPassword: { type: 'string', 'minLength': 6 },
     },
-    required: ['userName', 'userEmail', 'userPhone', 'userPassword', 'userGender'],
+    required: ['userName', 'userEmail', 'userPassword'],
     additionalProperties: false
 }

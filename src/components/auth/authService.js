@@ -21,9 +21,11 @@ exports.checkSignUpFormat = (reqBody) => {
     return true;
 }
 
-exports.isExistedAccount = async (reqBody) => {
-    const account = await authModel.findOne(reqBody.userEmail);
-    if (!account) {
+exports.isExistedAccount = async (email) => {
+    console.log("check existed");
+    const exist = await authModel.findOne({ userEmail: email });
+    console.log("Exist: " + exist);
+    if (exist) {
         return true;
     } else {
         return false;
@@ -32,8 +34,32 @@ exports.isExistedAccount = async (reqBody) => {
 
 exports.register = async (reqBody) => {
     const salt = await bcrypt.genSalt(10);
+    console.log(reqBody);
     const hashPassword = await bcrypt.hash(reqBody.userPassword, salt);
-
+    const newUser = {
+        userName: reqBody.userName,
+        userEmail: reqBody.userEmail,
+        userPassword: hashPassword,
+        userPhoneNumber: '',
+        userAddress: ''
+    }
     // call query insert new user into database
-    // const check = await 
+    const result = await authModel.insertMany(newUser);
+    console.log("Add new user successfully");
 }
+
+
+exports.signIn = async (inputEmail, inputPassword) => {
+    const user = await authModel.findOne({ userEmail: inputEmail });
+    console.log(user);
+    if (!user || user.length == 0) {
+        return null;
+    }
+    else if (await bcrypt.compare(inputPassword, user.userPassword)) {
+        return user;
+    }
+    else {
+        return null;
+    }
+}
+

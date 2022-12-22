@@ -4,17 +4,16 @@ const authController = require('./authController');
 const { authenticate } = require('./passport');
 const passport = require('./passport');
 
-router.get('/login', function (req, res) {
-    res.render('auth/logIn', { layout: false });
+router.get('/sign', function (req, res, next) {
+  res.render('auth/sign', { layout: false });
 });
 
-router.post('/login', passport / authenticate('local', {
-    successRedirect: '/index',
-    failureRedirect: '/auth/login'
+router.post('/signin', passport.authenticate('local', {
+  successRedirect: '/index',
+  failureRedirect: '/auth/sign'
 }));
 
-router.get('signup', function (req, res, next) {
-    res.render('auth/signUp', { layout: false });
-});
 
 router.post('/signup', authController.signup);
+
+module.exports = router;
