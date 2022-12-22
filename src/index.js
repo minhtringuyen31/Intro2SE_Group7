@@ -13,7 +13,7 @@ const authRouter = require('./components/auth/authRouter');
 
 
 
-// const passport = require('./components/auth/passport');
+const passport = require('./components/auth/passport');
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.use(session({
   saveUninitialized: false,
 }))
 
-// app.use(passport.authenticate('session'));
+app.use(passport.authenticate('session'));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -36,12 +36,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// app.use(function (req, res, next) {
-//   console.log("res.user");
-//   console.log(req.user);
-//   res.locals.user = req.user;
-//   next();
-// });
+app.use(function (req, res, next) {
+  console.log("res.user");
+  console.log(req.user);
+  res.locals.user = req.user;
+  next();
+});
 
 
 app.use('/index', indexRouter);

@@ -8,6 +8,8 @@ router.get('/sign', function (req, res, next) {
   res.render('auth/sign', { layout: false });
 });
 
+router.get('/logout', authController.logout);
+
 router.post('/signin', passport.authenticate('local', {
   successRedirect: '/index',
   failureRedirect: '/auth/sign'
