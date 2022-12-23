@@ -12,14 +12,14 @@ exports.checkLogIFormat = (reqBody) => {
         return false;
     }
     return true;
-}
+};
 
 exports.checkSignUpFormat = (reqBody) => {
     if (!ajv.validate(authSchemas.signUpSchema, reqBody)) {
         return false;
     }
     return true;
-}
+};
 
 exports.isExistedAccount = async (email) => {
     console.log("check existed");
@@ -30,7 +30,7 @@ exports.isExistedAccount = async (email) => {
     } else {
         return false;
     }
-}
+};
 
 exports.register = async (reqBody) => {
     const salt = await bcrypt.genSalt(10);
@@ -46,7 +46,7 @@ exports.register = async (reqBody) => {
     // call query insert new user into database
     const result = await authModel.insertMany(newUser);
     console.log("Add new user successfully");
-}
+};
 
 
 exports.signIn = async (inputEmail, inputPassword) => {
@@ -61,5 +61,8 @@ exports.signIn = async (inputEmail, inputPassword) => {
     else {
         return null;
     }
-}
+};
 
+// exports.emailExists =(email)=> {
+
+// }

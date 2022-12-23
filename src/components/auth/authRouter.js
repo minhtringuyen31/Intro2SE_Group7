@@ -15,7 +15,8 @@ router.post('/signin', passport.authenticate('local', {
   failureRedirect: '/auth/sign'
 }));
 
-
 router.post('/signup', authController.signup);
+
+router.get('/verify-email/:email', authController.verifyEmail);
 
 module.exports = router;

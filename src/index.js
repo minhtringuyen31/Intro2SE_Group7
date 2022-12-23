@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
+const hbs = require('hbs');
 
 //set router
 //set router
@@ -20,6 +21,29 @@ const app = express();
 // view engine setup   
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+
+var blocks = {};
+
+hbs.registerHelper('extend', function (name, context) {
+  var block = blocks[name];
+  if (!block) {
+    block = blocks[name] = [];
+  }
+
+  block.push(context.fn(this)); // for older versions of handlebars, use block.push(context(this));
+});
+
+hbs.registerHelper('block', function (name) {
+  var val = (blocks[name] || []).join('\n');
+
+  // clear the block
+  blocks[name] = [];
+  return val;
+});
+
+
+
 
 app.use(session({
   secret: 'very secret keyboard cat',

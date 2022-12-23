@@ -28,3 +28,9 @@ exports.logout = (req, res) => {
         res.redirect('/index');
     });
 };
+
+exports.verifyEmail = async (req, res) => {
+    const { email } = req.params;
+    const result = await authService.isExistedAccount(email);
+    res.json(!result);
+}

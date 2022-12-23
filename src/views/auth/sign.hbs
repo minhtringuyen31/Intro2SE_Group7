@@ -14,9 +14,12 @@
 			</div>
 			<span>or use your email for registration</span>
 			<input type="text" placeholder="Name" name="userName" />
-			<input type="email" placeholder="Email" name="userEmail" />
+			<input type="email" placeholder="Email" name="userEmail" id="email" />
 			<input type="password" placeholder="Password" name="userPassword" />
-			<button type="submit" value="signup">Sign Up</button>
+			<div class="error" id="error-email-existed" style="display: none">Email existed!</div>
+			<div class="success" id="success-email" style="display: none">Email available</div>
+
+			<button type="submit" value="signup" id="register-button">Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
@@ -50,3 +53,20 @@
 	</div>
 </div>
 <script src="/js/signup.js"></script>
+{{#extend "scripts"}}
+<script>
+	$('#email').change(function () {
+		$.getJSON('/auth/verify-email/' + $(this).val(), function (data) {
+			if (data) {
+				$('#error-email-existed').hide();
+				$('#success-email').show();
+				$('#register-button').attr('disabled', false)
+			} else {
+				$('#error-email-existed').show();
+				$('#success-email').hide();
+				$('#register-button').attr('disabled', true)
+			}
+		});
+	});
+</script>
+{{/extend}}
