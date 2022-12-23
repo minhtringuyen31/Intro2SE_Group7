@@ -1,3 +1,4 @@
+
 // const productList =
 //     [
 //         {
@@ -48,34 +49,88 @@
 
 // exports.productList = productList;
 
-const mongoose = require('mongoose');;
+// const mongoose = require('mongoose');;
 
-const productSchema = mongoose.Schema({
-    productID: {
+// const productSchema = mongoose.Schema({
+//     productID: {
+//         type: String,
+//         required: true,
+//     },
+//     productName: {
+//         type: String,
+//         required: true,
+//     },
+//     productImage: {
+//         type: String,
+//         required: true,
+//     },
+//     productDescription: {
+//         type: String,
+//         required: true,
+//     },
+//     productPrice: {
+//         type: Number,
+//         required: true,
+//     },
+//     productStatus: {
+//         type: String,
+//         required: true,
+//         default: 'available',
+//     }
+// });
+
+// module.exports = mongoose.model("Product", productSchema);
+
+
+
+/**
+ * Tạo schema giống với tạo bản khai cấu trúc dữ liệu
+ */
+
+const mongoose = require('mongoose');
+
+const productSchema = new mongoose.Schema({
+    id: {
         type: String,
-        required: true,
+        required: 'This field is required.'
     },
-    productName: {
+    name: {
         type: String,
-        required: true,
+        required: 'This field is required.'
     },
-    productImage: {
+    signature: {
         type: String,
-        required: true,
+        required: 'This field is required.'
     },
-    productDescription: {
+    origin: {
         type: String,
-        required: true,
+        required: 'This field is required.'
     },
-    productPrice: {
-        type: Number,
-        required: true,
-    },
-    productStatus: {
+    factory: {
         type: String,
-        required: true,
-        default: 'available',
+        required: 'This field is required.'
+    },
+    skin: {
+        type: String,
+        required: 'This field is required.'
+    },
+    problem: {
+        type: String,
+        required: 'This field is required.'
+    },
+    price: {
+        type: String,
+        required: 'This field is required.'
+    },
+    img: {
+        type: String,
+        required: 'This field is required.'
     }
-});
+},
+    {
+        collection: "product"
+    }
+);
 
-module.exports = mongoose.model("Product", productSchema);
+module.exports = mongoose.model('product', productSchema);
+

@@ -1,5 +1,6 @@
 const productService = require('./productService');
 
+
 exports.productList = (req, res) => {
     try {
         console.log("get data");
@@ -17,8 +18,3 @@ exports.productList = (req, res) => {
     }
 }
 
-
-// exports.list = (req, res) => {
-//     const students = studentService.getAll();
-//     res.render("./user/students/list", students);
-// };
