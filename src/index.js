@@ -5,20 +5,13 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 const hbs = require('hbs');
-
 require('dotenv').config();
 
-
-
-//set router
 //set router
 const indexRouter = require('./components/home');
 
 const productRouter = require('./components/products/productRouter');
 const authRouter = require('./components/auth/authRouter');
-
-
-
 const passport = require('./components/auth/passport');
 
 const app = express();
@@ -46,8 +39,6 @@ hbs.registerHelper('block', function (name) {
   blocks[name] = [];
   return val;
 });
-
-
 
 
 app.use(session({
