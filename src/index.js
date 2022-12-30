@@ -13,7 +13,7 @@ require('dotenv').config();
 const indexRouter = require('./components/home');
 
 const authRouter = require ('./components/auth/authRouter');
-
+const profilesRouter = require ('./components/auth/profilesRouter');
 
 // const passport = require('./components/auth/passport');
 
@@ -50,8 +50,8 @@ app.use('/index', indexRouter);
 
 
 app.use('/signup', authRouter);
+app.use('/profiles', profilesRouter);
 //passport
-
 
 
 // app.use(passport.initialize());
