@@ -10,6 +10,10 @@ router.get('/sign', function (req, res, next) {
 
 router.get('/logout', authController.logout);
 
+router.get('/editProfile', function (req, res) {
+  res.render('auth/profiles');
+})
+
 router.post('/signin', passport.authenticate('local', {
   successRedirect: '/index',
   failureRedirect: '/auth/sign'
