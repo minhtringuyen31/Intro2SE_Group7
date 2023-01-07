@@ -8,54 +8,26 @@ db.once('open', function () {
     console.log('Connected to group 07 database to get Product');
 });
 
-const coll  = db.collection('SERUM');
+const coll  = db.collection('product');
 
 async function insertProductData() {
     try {
         const result = await coll.insertMany([
             {
-                "id": "SR1",
+                "category": "",
                 "name": "Innisfree Green Tea Seed Serum 30 mL",
                 "brand": "Innisfree",
                 "origin": "Korea",
                 "factory": "Korea",
                 "skin types": "Dry skin, Oily skin lacks moisture, Sensitive skin",
                 "skin problem": "Dry, sensitive",
+                "img": "/img/product/SR1.jpg",
+                "color": ["",""],
+                "size": ["",""],
+                "star": 4,
+                "descripstion": "",
+                "the number of": 10,
                 "price": "310000",
-                "img": "/img/product/SR1.jpg"
-            },
-            {
-                "id": "SM2",
-                "name": "Serum Skin1004 Madagascar Centella Ampoule 55ml",
-                "brand": "Skin1004",
-                "origin": "Korea",
-                "factory": "Korea",
-                "skin types": "Sensitive skin",
-                "skin problem": "Dry, sensitive",
-                "price": "333000",
-                "img": "/img/product/SR2.jpg"
-            },
-            {
-                "id": "SM3",
-                "name": "Huxley Essence; Brightly Ever After 30ml",
-                "brand": "Huxley",
-                "origin": "Korea",
-                "factory": "Korea",
-                "skin types": "Many skin types",
-                "skin problem": "Dark skin, Olive skin",
-                "price": "512000",
-                "img": "/img/product/SR3.jpg"
-            },
-            {
-                "id": "SM4",
-                "name": "Bio-essence Bio-Bird's Nest Collagen 1000 Essence 30ml",
-                "brand": "Bio-essence",
-                "origin": "Singapore",
-                "factory": "Malaysia",
-                "skin types": "Many skin types",
-                "skin problem": "Olive skin, Dark skin, Dry skin",
-                "price": "429000",
-                "img": "/img/product/SR4.jpg"
             }
         ]);
         
