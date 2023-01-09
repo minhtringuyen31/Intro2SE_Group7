@@ -1,5 +1,4 @@
 .vscode
 node_modules/
 src/package-lock.json
-/package-lock.json
 package-lock.json
