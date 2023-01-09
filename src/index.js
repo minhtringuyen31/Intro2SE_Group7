@@ -66,7 +66,7 @@ app.use(function (req, res, next) {
 
 
 app.use('/index', indexRouter);
-app.use('/products', productRouter);
+app.use('/product', productRouter);
 app.use('/auth', authRouter);
 
 

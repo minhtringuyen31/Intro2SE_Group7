@@ -1,21 +1,14 @@
+const Paginator = require('paginator');
 
-// const { productList } = require('./productModel');
+const productRepository = require('./productRepository');
+const { ITEM_PER_PAGE, TOTAL_PAGING_LINK } = require('../../constant');
 
-// exports.getAll = () => {
-//     return productList;
-// };
-// =======
-const product = require('./productModel');
+exports.getProductsByPage = async (page) => {
+    const result = await productRepository.getProductsByPage(page);
+    return result;
+}
 
-
-exports.getAll = async () => {
-    try {
-        const result = await product.find({});
-        console.log("product");
-        console.log(result);
-        return result;
-    } catch {
-        console.log("Cannot get data from db");
-        return;
-    }
+exports.count = async (page) => {
+    const result = await productRepository.count();
+    return result;
 }
