@@ -1,4 +1,5 @@
 const productService = require('./productService');
+const connection = require('../connect_DB');
 
 
 exports.productList = (req, res) => {
