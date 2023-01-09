@@ -37,3 +37,7 @@ exports.getProductByPage = async (req, res) => {
     };
     res.json({ listProducts, pageObject });
 }
+
+exports.filterProductByPage = async (req, res) => {
+
+}
