@@ -152,14 +152,14 @@ VALUES
 INSERT INTO PRODUCT (PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_CATEGORY, PRODUCT_BRAND, PRODUCT_DESCRIPTION, NUMBER_OF)
 VALUES
     ('SK01','All About Clean™ 2-in-1 Charcoal Mask + Scrub', 32, 'skincare', 'clinique',
-    'Who It\'s For\n
+    "Who It's For\n 
     All Skin Types\n
     What It Is\n
     Five-minute dual-action detoxifying face mask and scrub that helps remove pollution, impurities,\n
     excess oil, plus refines skin’s texture.\n
 	What It Does\n
     Two-in-one formula with bamboo charcoal and kaolin clay delivers a powerful,\n
-    detoxifying clean for polished skin. Leaves skin clear, bright, and feeling smooth.', 4);
+    detoxifying clean for polished skin. Leaves skin clear, bright, and feeling smooth.", 4);
     
 INSERT INTO PRODUCT (PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_CATEGORY, PRODUCT_BRAND, PRODUCT_DESCRIPTION, NUMBER_OF)
 VALUES
