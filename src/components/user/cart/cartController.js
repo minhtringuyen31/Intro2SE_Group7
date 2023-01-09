@@ -6,6 +6,7 @@ exports.showCart = (req, res) => {
 
         // require information of product
         // res.render('products/productDetails', {style: 'product_detail', layout: 'layout' });
+        res.render('cart/cart');
         console.log('Render Successfully !');
 
     } catch (err) {

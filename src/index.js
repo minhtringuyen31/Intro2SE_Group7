@@ -14,7 +14,13 @@ const productRouter = require('./components/products/productRouter');
 const authRouter = require('./components/auth/authRouter');
 const passport = require('./components/auth/passport');
 
+
 const cartRouter = require('./components/user/cart/cartRouter');
+
+
+const profilesRouter = require('./components/auth/profilesRouter');
+const checkoutRouter = require('./components/cart/checkoutRouter');
+// const cartRouter = require('./components/cart/cartRouter');
 
 const app = express();
 
@@ -69,10 +75,14 @@ app.use(function (req, res, next) {
 app.use('/index', indexRouter);
 app.use('/products', productRouter);
 app.use('/auth', authRouter);
+
 app.use('/cart', cartRouter);
 
-//passport
+// app.use('/cart',cartRouter);
+// app.use('/checkout',checkoutRouter);
 
+
+//passport
 
 
 // app.use(passport.initialize());

@@ -6,7 +6,7 @@ exports.productList = (req, res) => {
         console.log("get data");
         const result = productService.getAll();
 
-        console.log(result);
+        console.log("get all" + result);
 
         res.render('products/productList', { result, layout: 'layout' });
         // res.render('user/products/list', { result, originalUrl, layout: 'layout.hbs' });
@@ -14,7 +14,6 @@ exports.productList = (req, res) => {
 
     } catch (err) {
         console.log(err);
-        res.status(500).json({ message: 'Server error' });
     }
 }
 

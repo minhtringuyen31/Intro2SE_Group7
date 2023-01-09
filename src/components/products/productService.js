@@ -9,8 +9,13 @@ const product = require('./productModel');
 
 
 exports.getAll = async () => {
-    const result = await product.find({});
-    console.log("product");
-    console.log(result);
-    return result;
+    try {
+        const result = await product.find({});
+        console.log("product");
+        console.log(result);
+        return result;
+    } catch {
+        console.log("Cannot get data from db");
+        return;
+    }
 }
