@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET cart page. */
+/* GET checkout page. */
 router.get('/', function (req, res, next) {
   //throw new Error('Unknown error!');
-  res.render('cart/cart');
+  res.render('cart/checkout');
 });
 
 
