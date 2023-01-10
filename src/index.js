@@ -9,11 +9,12 @@ require('dotenv').config();
 
 //set router
 const indexRouter = require('./components/home');
-
 const productRouter = require('./components/products/productRouter');
 const authRouter = require('./components/auth/authRouter');
 const passport = require('./components/auth/passport');
-const profilesRouter = require('./components/auth/profilesRouter');
+const accountRouter = require('./components/account/accountRouter');
+
+
 
 const app = express();
 
@@ -68,6 +69,7 @@ app.use(function (req, res, next) {
 app.use('/index', indexRouter);
 app.use('/product', productRouter);
 app.use('/auth', authRouter);
+app.use('/account', accountRouter);
 
 
 //passport
