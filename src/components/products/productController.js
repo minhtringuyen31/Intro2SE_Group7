@@ -1,15 +1,19 @@
 const productService = require('./productService');
 
 
-// xử lý truyền qua view
-
-exports.getAllProduct = async (req, res) => {
+exports.productList = (req, res) => {
     try {
-        const products = await productService.getAllProduct();
-        // Chỉnh lại cái title ở main.js khi reload
-        res.render('index', { title: 'Product - hhman', products });
-    } catch (error) {
-        console.log(error)
-        res.satus(500).send(message, error.message || "Error Occured");
+        console.log("get data");
+        const result = productService.getAll();
+
+        console.log("get all" + result);
+
+        res.render('products/productList', { result, layout: 'layout' });
+        // res.render('user/products/list', { result, originalUrl, layout: 'layout.hbs' });
+        console.log('Render Successfully !');
+
+    } catch (err) {
+        console.log(err);
     }
 }
+

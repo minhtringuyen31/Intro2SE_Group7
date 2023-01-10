@@ -4,24 +4,43 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
-
+const hbs = require('hbs');
 require('dotenv').config();
-
-
 
 //set router
 const indexRouter = require('./components/home');
 
-const authRouter = require ('./components/auth/authRouter');
-const profilesRouter = require ('./components/auth/profilesRouter');
-
-// const passport = require('./components/auth/passport');
+const productRouter = require('./components/products/productRouter');
+const authRouter = require('./components/auth/authRouter');
+const passport = require('./components/auth/passport');
+const profilesRouter = require('./components/auth/profilesRouter');
 
 const app = express();
 
-// view engine setup
+// view engine setup   
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+
+var blocks = {};
+
+hbs.registerHelper('extend', function (name, context) {
+  var block = blocks[name];
+  if (!block) {
+    block = blocks[name] = [];
+  }
+
+  block.push(context.fn(this)); // for older versions of handlebars, use block.push(context(this));
+});
+
+hbs.registerHelper('block', function (name) {
+  var val = (blocks[name] || []).join('\n');
+
+  // clear the block
+  blocks[name] = [];
+  return val;
+});
+
 
 app.use(session({
   secret: 'very secret keyboard cat',
@@ -29,13 +48,14 @@ app.use(session({
   saveUninitialized: false,
 }))
 
-// app.use(passport.authenticate('session'));
+app.use(passport.authenticate('session'));
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use(function (req, res, next) {
   console.log("res.user");
@@ -46,11 +66,10 @@ app.use(function (req, res, next) {
 
 
 app.use('/index', indexRouter);
-// app.use('/products', productRouter);
+app.use('/products', productRouter);
+app.use('/auth', authRouter);
 
 
-app.use('/signup', authRouter);
-app.use('/profiles', profilesRouter);
 //passport
 
 
