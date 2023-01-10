@@ -77,13 +77,12 @@
                                     <div class="card-body">
                                         <div class="shop__sidebar__price">
                                             <ul>
-                                                <li><a href="#">$0.00 - $20.00</a></li>
-                                                <li><a href="#">$0.00 - $20.00</a></li>
-                                                <li><a href="#">$50.00 - $100.00</a></li>
-                                                <li><a href="#">$100.00 - $150.00</a></li>
-                                                <li><a href="#">$150.00 - $200.00</a></li>
-                                                <li><a href="#">$200.00 - $250.00</a></li>
-                                                <li><a href="#">250.00+</a></li>
+                                                <li><a href="/product/filterByPrice/?option=1">$0.00 - $30.00</a></li>
+                                                <li><a href="/product/filterByPrice/?option=2">$30.00 - $60.00</a></li>
+                                                <li><a href="/product/filterByPrice/?option=3">$60.00 - $90.00</a></li>
+                                                <li><a href="/product/filterByPrice/?option=4">$90.00 - $120.00</a></li>
+                                                <li><a href="/product/filterByPrice/?option=5">$120.00+</a></li>
+
                                             </ul>
                                         </div>
                                     </div>
@@ -227,13 +226,11 @@
                     \{{#each .}}
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item">
-
-                            <div class="product__item__pic set-bg" data-setbg="{{img}}">
+                            
+                            <div class="product__item__pic set-bg">
+                                <img  class="set-bg" src=\{{PRODUCT_IMAGE}}>
                                 <ul class="product__hover">
-                                    <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
-                                    <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                    </li>
-                                    <li><a href="#"><img src="/img/icon/search.png" alt=""></a></li>
+                                    <a href="/product/\{{PRODUCT_ID}}"><img src="/img/icon/search.png" alt=""></a>
                                 </ul>
                             </div>
 

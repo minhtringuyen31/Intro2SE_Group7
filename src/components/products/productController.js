@@ -3,6 +3,15 @@ const connection = require('../connect_DB');
 
 const { ITEM_PER_PAGE, TOTAL_PAGING_LINK } = require('../../constant');
 
+exports.getDetail = async (req, res) => {
+    const productID = req.params['id'];
+    console.log("alo");
+    console.log(productID);
+    const result = await productService.getAProduct(productID);
+    console.log("res: " + result);
+    res.render('products/productDetail', { result: result });
+}
+
 exports.getAll = async (req, res) => {
     res.render('products/productList');
 }
@@ -38,6 +47,6 @@ exports.getProductByPage = async (req, res) => {
     res.json({ listProducts, pageObject });
 }
 
-exports.filterProductByPage = async (req, res) => {
+exports.filterByPrice = async (req, res) => {
 
 }
