@@ -71,28 +71,28 @@
                                 <li>Price <span name="totalPriceInput" class="checkout__input"
                                         value="{{orderInfor.totalPrice}}">${{orderInfor.totalPrice}}</span></li>
                                 <li>Ship <span>$ 0.00</span></li>
-                                <li>Total <span name="totalPriceInput" value="{{orderInfor.totalPrice}}>${{orderInfor.totalPrice}}</span></li>
+                                <li>Total <span name="totalPriceInput"
+                                        value="{{orderInfor.totalPrice}}">${{orderInfor.totalPrice}}</span></li>
                             </ul>
                             <div class=" checkout__input__checkbox checkout__input">
-                                        <label for="payment">
-                                            Cash on delivery
-                                            <input type="checkbox" id="payment" value="payment on delivery"
-                                                name="methodInput">
-                                            <span class="checkmark"></span>
-                                        </label>
+                                <label for="payment">
+                                    Cash on delivery
+                                    <input type="checkbox" id="payment" value="payment on delivery" name="methodInput">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="checkout__input__checkbox checkout__input">
+                                <label for="paypal">
+                                    Momo
+                                    <input type="checkbox" id="paypal" value="momo" name="methodInput">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <button type="submit" class="site-btn ">Payment</button>
                         </div>
-                        <div class="checkout__input__checkbox checkout__input">
-                            <label for="paypal">
-                                Momo
-                                <input type="checkbox" id="paypal" value="momo" name="methodInput">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <button type="submit" class="site-btn ">Payment</button>
                     </div>
                 </div>
+            </form>
         </div>
-        </form>
-    </div>
     </div>
 </section>

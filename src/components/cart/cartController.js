@@ -53,7 +53,9 @@ exports.showCheckout = async (req, res) => {
         const products = await cartService.cartDetails(userEmail);
         console.log(products);
 
-        const total = req.params;
+        const total = products.reduce((accumulator, object) => {
+            return accumulator + parseFloat(object.total);
+        }, 0);
         console.log(total);
         const orderInfor = {
             orderName: req.user.loginName,
@@ -76,6 +78,7 @@ exports.addOrder = async (req, res) => {
     const total = products.reduce((accumulator, object) => {
         return accumulator + parseFloat(object.total);
     }, 0);
+
     const newestOrder = {
         USER_EMAIL: req.body.emailInput,
         ORDER_DATE: date,
@@ -83,8 +86,6 @@ exports.addOrder = async (req, res) => {
         ADDRESS_SHIPPING: req.body.addressInput,
         TOTAL: total
     }
-
-    console.log(newestOrder);
 
 
     await cartService.addOrder(newestOrder, products); //add products to `order` table and `orderproduct` table -> remove all current product from `cart` table
