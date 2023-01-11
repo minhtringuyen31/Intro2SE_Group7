@@ -3,6 +3,7 @@ const addFormats = require('ajv-formats');
 const authSchemas = require('./authSchema');
 const authRep = require('./authRepository');
 const bcrypt = require('bcryptjs');
+const db = require('../connect_DB');
 
 const ajv = new Ajv();
 addFormats(ajv);
@@ -74,6 +75,3 @@ exports.signIn = async (inputEmail, inputPassword) => {
     }
 };
 
-// exports.emailExists =(email)=> {
-
-// }
