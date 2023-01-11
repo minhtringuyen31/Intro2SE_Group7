@@ -10,7 +10,7 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, async function verify
     console.log(user);
     if (user) {
         console.log("success");
-        return cb(null, user);
+        return cb(null, user[0]);
     }
     else {
         console.log("failure");
@@ -20,7 +20,7 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, async function verify
 
 passport.serializeUser(function (user, cb) {
     process.nextTick(function () {
-        cb(null, { loginEmail: user.userEmail, loginName: user.userName, loginAddress: user.userAddress });
+        cb(null, { loginEmail: user.USER_EMAIL, loginName: user.USER_NAME, loginPhone: user.USER_PHONE, loginBirthday: user.USER_BIRTHDAY, loginAddress: user.USER_ADDRESS });
     });
 });
 

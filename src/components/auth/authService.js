@@ -1,7 +1,7 @@
 const Ajv = require('ajv');
 const addFormats = require('ajv-formats');
 const authSchemas = require('./authSchema');
-const authModel = require('./authModel');
+const authRep = require('./authRepository');
 const bcrypt = require('bcryptjs');
 
 const ajv = new Ajv();
@@ -23,7 +23,7 @@ exports.checkSignUpFormat = (reqBody) => {
 
 exports.isExistedAccount = async (email) => {
     console.log("check existed");
-    const exist = await authModel.findOne({ userEmail: email });
+    const exist = await authRep.isExistedEmail(email);
     console.log("Exist: " + exist);
     if (exist) {
         return true;
@@ -41,21 +41,32 @@ exports.register = async (reqBody) => {
         userEmail: reqBody.userEmail,
         userPassword: hashPassword,
         userPhoneNumber: '',
+        userBirthday: '',
         userAddress: ''
     }
     // call query insert new user into database
-    const result = await authModel.insertMany(newUser);
-    console.log("Add new user successfully");
+    const result = await authRep.addNewUser(newUser);
+    console.log("register: " + result);
+    if (result) {
+        console.log("Add new user successfully");
+        return true;
+
+    }
+    else {
+        console.log("Add new user failure");
+        return false;
+    }
+
 };
 
 
 exports.signIn = async (inputEmail, inputPassword) => {
-    const user = await authModel.findOne({ userEmail: inputEmail });
+    const user = await authRep.getUserAccountByEmail(inputEmail);
     console.log(user);
     if (!user || user.length == 0) {
         return null;
     }
-    else if (await bcrypt.compare(inputPassword, user.userPassword)) {
+    else if (await bcrypt.compare(inputPassword, user[0].USER_PASSWORD)) {
         return user;
     }
     else {

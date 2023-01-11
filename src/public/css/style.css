@@ -1471,12 +1471,12 @@ ol {
 	border-radius: 0;
 }
 
-.product__pagination {
+#product-pagination {
 	padding-top: 25px;
 	text-align: center;
 }
 
-.product__pagination a {
+#product-pagination a {
 	display: inline-block;
 	font-size: 16px;
 	font-weight: 700;
@@ -1489,15 +1489,15 @@ ol {
 	text-align: center;
 }
 
-.product__pagination a.active {
+#product-pagination a.active {
 	border-color: #111111;
 }
 
-.product__pagination a:hover {
+#product-pagination a:hover {
 	border-color: #111111;
 }
 
-.product__pagination span {
+#product-pagination span {
 	display: inline-block;
 	font-size: 16px;
 	font-weight: 700;

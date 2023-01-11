@@ -28,7 +28,6 @@
     <link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/animate.css" />
     <link rel="stylesheet" type="text/css" href="/css/main_styles.css" />
     <link rel="stylesheet" type="text/css" href="/css/responsive.css" />
-
 </head>
 
 <body>
@@ -47,7 +46,7 @@
                             <ul class="top_nav_menu">
 
                                 <!-- Currency / Language / My Account -->
-                                <li class="language">
+                                {{!-- <li class="language">
                                     <a href="#">
                                         English
                                         <i class="fa fa-angle-down"></i>
@@ -58,7 +57,7 @@
                                         <li><a href="#">German</a></li>
                                         <li><a href="#">Spanish</a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
                                 {{#if user}}
                                 <li class="account">
                                     <a href="#">
@@ -109,6 +108,8 @@
                             <ul class="navbar_menu">
                                 <li><a href="/index">home</a></li>
                                 <li><a href="/products">shop</a></li>
+                                <li><a href="/product">shop</a></li>
+                                <li><a href="#">promotion</a></li>
                                 <li><a href="#">pages</a></li>
                                 <li><a href="#">blog</a></li>
                                 <li><a href="contact.html">contact</a></li>
@@ -117,7 +118,7 @@
                                 <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                                 <li><a href="/auth/profiles"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                                 <li class="checkout">
-                                    <a href="#">
+                                    <a href="/cart/cart-detail">
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         <span id="checkout_items" class="checkout_items">2</span>
                                     </a>
@@ -139,7 +140,7 @@
         <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
         <div class="hamburger_menu_content text-right">
             <ul class="menu_top_nav">
-                <li class="menu_item has-children">
+                {{!-- <li class="menu_item has-children">
                     <a href="#">
                         usd
                         <i class="fa fa-angle-down"></i>
@@ -150,8 +151,8 @@
                         <li><a href="#">eur</a></li>
                         <li><a href="#">gbp</a></li>
                     </ul>
-                </li>
-                <li class="menu_item has-children">
+                </li> --}}
+                {{!-- <li class="menu_item has-children">
                     <a href="#">
                         English
                         <i class="fa fa-angle-down"></i>
@@ -162,7 +163,7 @@
                         <li><a href="#">German</a></li>
                         <li><a href="#">Spanish</a></li>
                     </ul>
-                </li>
+                </li> --}}
                 <li class="menu_item has-children">
                     <a href="#">
                         My Account
@@ -279,7 +280,9 @@
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/main.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script src="/css/bootstrap4/popper.js"></script>
     <script src="/css/bootstrap4/bootstrap.min.js"></script>
@@ -287,8 +290,18 @@
     <script src="/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
     <script src="/plugins/easing/easing.js"></script>
     <script src="/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
 
     {{{block "scripts"}}}
+
 
     {{!--
     <script
