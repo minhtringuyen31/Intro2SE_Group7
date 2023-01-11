@@ -16,6 +16,7 @@ const passport = require('./components/auth/passport');
 const profilesRouter = require('./components/auth/profilesRouter');
 const checkoutRouter = require('./components/cart/checkoutRouter');
 const cartRouter = require('./components/cart/cartRouter');
+const paymentRouter = require('./components/cart/paymentRouter');
 const app = express();
 
 // view engine setup   
@@ -71,6 +72,7 @@ app.use('/products', productRouter);
 app.use('/auth', authRouter);
 app.use('/cart',cartRouter);
 app.use('/checkout',checkoutRouter);
+app.use('/payment',paymentRouter);
 
 //passport
 
