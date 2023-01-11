@@ -32,3 +32,7 @@ exports.removeFromCart = async (_userEmail, _idProduct) => {
     await cartRepository.removeProductInCart(_userEmail, _idProduct);
     return true;
 }
+
+exports.addOrder = async (newestOrder, products) => {
+    await cartRepository.addNewOrder(newestOrder);
+}
