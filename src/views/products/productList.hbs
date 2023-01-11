@@ -236,7 +236,8 @@
 
                             <div class="product__item__text">
                                 <h6>\{{PRODUCT_NAME}}</h6>
-                                <a href="#" class="add-cart">+ Add To Cart</a>
+                                <button class="btn btn-add-cart btn-primary btn-outline-primary" id="\{{PRODUCT_ID}}">Add to cart</button>
+                                {{!-- <a class="add-cart" id="{{idProduct}}>+ Add To Cart</a> --}}
                                 <div class="rating">
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
@@ -268,6 +269,7 @@
     \{{/each}}
 </script>
 
+
 {{#extend "scripts"}}
 <script>
     function loadProductPage(page) {
@@ -292,5 +294,15 @@
 
     loadProductPage(1);
 </script>
+
+<script>
+    $(function () {
+        $('button.btn-add-cart').click(function () {
+            console.log("script id: ")
+            let id = $(this).attr("id");
+            $.get('/cart/add-to-cart/' + id, function (data) {
+            })
+        })
+    })
+</script>
 {{/extend}}
-<!-- Shop Section End -->

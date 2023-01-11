@@ -57,10 +57,14 @@ exports.addNewUser = async (newUser) => {
             "INSERT INTO users (USER_EMAIL, USER_NAME, USER_PASSWORD) \
                 VALUES (?,?,?)", [newUser.userEmail, newUser.userName, newUser.userPassword]
         );
+        await poolPromise.query(
+            "INSERT INTO CART (USER_EMAIL) \
+                VALUES (?)", [newUser.userEmail]
+        );
         return true;
     }
     catch (err) {
         console.log(err);
         return false;
     }
-}
+} 
