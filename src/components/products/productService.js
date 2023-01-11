@@ -8,6 +8,11 @@ exports.getAProduct = async (productID) => {
     return result;
 }
 
+exports.getRelatedProduct = async (productID) => {
+    const result = await productRepository.getRelatedProduct(productID);
+    return result;
+}
+
 exports.getProductsByPage = async (page) => {
     const result = await productRepository.getProductsByPage(page);
     return result;
@@ -18,3 +23,23 @@ exports.count = async (page) => {
     return result;
 }
 
+
+exports.filterByPrice = async (option) => {
+    const result = await productRepository.filterByPrice(option);
+    return result;
+}
+
+exports.filterByBrand = async (option) => {
+    const result = await productRepository.filterByBrand(option);
+    return result;
+}
+
+exports.filterByCategory = async (option) => {
+    const result = await productRepository.filterByCategory(option);
+    return result;
+}
+
+exports.search = async (keyword) => {
+    const result = await productRepository.search(keyword);
+    return result;
+}

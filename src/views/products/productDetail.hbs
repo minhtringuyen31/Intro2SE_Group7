@@ -1,63 +1,43 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="/css/product_detail.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <!-- Icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-
-<div class="courseDetail">
-    <!-- Begin: Course Detail -->
-    <section class="course_detail spad">
-        <div class="container ">
-            <div class="row border border-gray rounded">
-                <!-- Img -->
-                <div class="col-md-6 px-0">
-                    <img class="img-fluid rounded w-100 h-100" src="/img/product/PM1.jpg" alt="">
-                </div>
-
-                <!-- Text -->
-                <div class="col-md-6">
-                    <div class="course__details__text">
-                        <h3>Innisfree Airy Eye Shadow Palette</h3>
-                        <div class="course__details__rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <span>1200 reviews</span>
-                            <span>12,001 students</span>
-                        </div>
-                        <div class="course__details__price">$100,00</div>
-                        <p>Innisfree Airy Eye Shadow Palette with micro-powder particles, for thin and smooth makeup,
-                            trendy yet natural tones,
-                            suitable for daily use.</p>
-
-                        <div>
-                            <button href="#" type="button" class="btn primary-btn btn_addCart">ADD TO CART</button>
-                        </div>
-                        <button href="#" type="button" class="btn btn-outline-success btn-buy">Buy now</button>
-                        <hr>
-                    </div>
-
-                </div>
-            </div>
-    </section>
-    <!-- End: Course Detail -->
-
-
-    {{!-- Begin: 5 other courses in the same category are bought the most --}}
-    <section class="featured-course">
+<section class="shop-details">
+    <div class="product__details__pic">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title featured__product__title">
-                        <h2>Related Products</h2>
+                    <div class="product__details__breadcrumb">
+                        <a href="/index">Home</a>
+                        <a href="/product">Shop</a>
+                        <span>Product Details</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                            <div class="product__details__pic__item">
+                                <img src="{{result.PRODUCT_IMAGE}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product__details__content">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                    <div class="product__details__text">
+                        <h4>{{result.PRODUCT_NAME}}</h4>
+                        <h3>{{result.PRODUCT_PRICE}}</h3>
+                        <p>{{result.PRODUCT_DESCRIPTION}}</p>
+
+                        <div class="product__details__cart__option">
+
+                            <a href="#" class="primary-btn">add to cart</a>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -92,6 +72,54 @@
                 </script>
             </div>
         </div>
-    </section>
-    {{!-- End: 5 other courses in the same category are bought the most --}}
-</div>
+        <<<<<<< HEAD </section>
+            {{!-- End: 5 other courses in the same category are bought the most --}}
+    </div>
+    =======
+    </div>
+</section>
+<!-- Shop Details Section End -->
+
+<!-- Related Section Begin -->
+<section class="related spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="related-title">Related Product</h3>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg">
+                        <img class="set-bg" src={{related.PRODUCT_IMAGE}}>
+                        <ul class="product__hover">
+
+                            <a href="/product/{{related.PRODUCT_ID}}"><img src="/img/icon/search.png" alt=""></a>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6>{{related.PRODUCT_NAME}}</h6>
+                        <a href="/cart/add-to-cart/{{PRODUCT_ID}}" class="add-cart">+ Add To Cart</a>
+
+                        <h5>${{related.PRODUCT_PRICE}}</h5>
+                        <div class="product__color__select">
+                            <label for="pc-1">
+                                <input type="radio" id="pc-1">
+                            </label>
+                            <label class="active black" for="pc-2">
+                                <input type="radio" id="pc-2">
+                            </label>
+                            <label class="grey" for="pc-3">
+                                <input type="radio" id="pc-3">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+>>>>>>> nvmtri

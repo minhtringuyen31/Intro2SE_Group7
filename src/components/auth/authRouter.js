@@ -19,4 +19,18 @@ router.post('/signup', authController.signup);
 
 router.get('/verify-email/:email', authController.verifyEmail);
 
+router.get('/profiles', function (req, res, next) {
+  res.render('auth/profiles', { layout: false });
+});
+
+router.get('/forgotPassword', function (req, res) {
+  res.render('auth/forgotPassword', { layout: false });
+});
+
+router.post('/forgotPassword', authController.forgotPassword);
+
+router.get('/forgotPassword/:email', authController.showResetPasswordForm);
+
+router.post('/resetPassword', authController.resetPassword);
+
 module.exports = router;
