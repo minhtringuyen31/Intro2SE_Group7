@@ -16,7 +16,7 @@ exports.signup = async (req, res, next) => {
     } else {
         console.log("user not exist")
         authService.register(req.body);
-        res.redirect('/index');
+        res.redirect('/auth/sign');
     }
 }
 

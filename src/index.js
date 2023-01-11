@@ -9,11 +9,13 @@ require('dotenv').config();
 
 //set router
 const indexRouter = require('./components/home');
-
 const productRouter = require('./components/products/productRouter');
 const authRouter = require('./components/auth/authRouter');
 const passport = require('./components/auth/passport');
-const profilesRouter = require('./components/auth/profilesRouter');
+const accountRouter = require('./components/account/accountRouter');
+const cartRouter = require('./components/cart/cartRouter');
+
+
 
 const app = express();
 
@@ -58,16 +60,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(function (req, res, next) {
-  console.log("res.user");
-  console.log(req.user);
+  // console.log("res.user");
+  // console.log(req.user);
   res.locals.user = req.user;
   next();
 });
 
 
 app.use('/index', indexRouter);
-app.use('/products', productRouter);
+app.use('/product', productRouter);
 app.use('/auth', authRouter);
+app.use('/account', accountRouter);
+app.use('/cart', cartRouter);
 
 
 //passport

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Course Detail */
 
 .course_detail {
@@ -467,3 +468,256 @@ b {
     color: #252525;
     font-weight: 700;
 }
+=======
+
+/***************** product-detail *********************/
+product-detail:before, product-detail:after {
+  box-sizing: border-box;
+  background: #E2DDDE;
+  font: 12px/18px "Lato", Arial, sans-serif;
+}
+
+.board-container{
+  background: white; 
+  width: 800px;
+  margin: 50px auto;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: -1px 15px 30px -6px rgba(196,196,196,1);
+}
+
+strong {
+  font-weight:900;
+}
+/***************** product-detail *********************/
+
+/****************** Begin left details ****************/
+.left {
+  float: left;
+  background: #FF0235;
+  background: linear-gradient(#FF0237, #FF4928);
+  width: 340px;
+  color: white;
+  padding: 30px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+} 
+.product-shot {
+  width: 250px;
+  margin-left: -54px;
+  /* margin-top: -20px; */
+}
+.product-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.product-price, .product-price-details {
+  text-align: center;
+}
+.product-price {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+/****************** End left details ****************/
+
+
+/****************** Begin Right details ****************/
+.right {
+  float: left;
+  width: 460px;
+  padding: 30px;
+  text-transform: uppercase;
+}
+
+.product-title {
+  font-size: 20px;
+}
+
+.label {
+  background: #FF3F2A;
+  color: white;
+  border-radius: 5px;
+  padding: 4px 7px;
+  font-size: 10px;
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+.product-category {
+  margin: 5px 0 10px;    
+}
+
+.product-stars {
+  margin-bottom: 30px;
+}
+
+.gray {
+  color: #999;
+}
+
+/* list item */
+ul.product-tabs {
+  margin-bottom: 20px;
+}
+
+ul.product-tabs li.active {
+  padding-bottom: 3px;
+  border-bottom: 3px solid #FF3F2A;
+}
+
+ul.product-tabs li.active a {
+  color: #FF3F2A !important;
+}
+
+ul.product-tabs li {
+  display: inline;
+  margin-right: 10px;      
+  padding: 0 7px;
+  color: #FF3F2A;
+  padding-bottom: 3px;
+  border-bottom: 3px solid #FF3F2A;  
+}
+
+ul.product-tabs li a {
+  color: #CACACA;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+ul.product-tabs li a:hover ul.product-tabs li a:focus {
+  color: #FF3F2A;
+}
+/* list item */
+
+.tab-content {
+  text-transform: none;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* Size */
+h2.Size {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.sizes {
+  margin-bottom: 20px;
+}
+.sizes li {
+  display: inline;
+  font-size: 14px;
+  margin-right: 40px;
+  padding: 5px;
+
+}
+.sizes li a {
+  text-decoration: none;        
+  color: black;
+}
+
+.sizes li.active, .sizes li:hover {
+  background: #FF3F2A;
+  border-radius: 50%;
+  color: white;
+}
+
+.sizes li.active > a, .sizes li:hover > a {
+  color: white;
+}
+/* Size */
+
+/* clour */
+.colours { 
+  margin: 20px 0 60px;
+}
+
+.colours li {
+  display: inline;
+  margin-right: 30px;
+}
+
+.colours li.active > a {
+  border: 1px solid #00D3EF;
+  border-radius: 100%;
+  padding: 14px 7px 3px 7px; 
+}
+
+.circle {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px; 
+  display: inline-block;
+}
+
+.blue {
+  background: #00D3EF;
+}
+
+.orange {
+  background: #FF3F2A;
+}
+
+.yellow {
+  background: #FFD203;
+}
+
+.black {
+  background: black;
+}  
+/* clour */
+
+a.btn {
+  text-decoration: none;
+  background: #CCC;
+  color: white;
+  padding: 14px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+a.btn:hover {
+  background: lighten(#CCC, 5%);
+}
+
+a.btn-primary {
+  background: #00D3EF;;
+  margin-right: 20px;
+}
+
+a.btn-primary:hover {
+  background: lighten(#00D3EF, 5%);
+}
+
+
+/****************** Left Right details ****************/
+
+.close-button {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  font-size: 40px;
+  color: #B8B8B8;
+  background: white;
+  border-radius: 50%;
+  padding: 10px 10px 15px 10px;
+  box-shadow: -1px 3px 20px -6px rgba(196,196,196,1);
+}
+
+.close-button:hover {
+  background: #fbfafa;
+  cursor: pointer;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+>>>>>>> nvmtri
