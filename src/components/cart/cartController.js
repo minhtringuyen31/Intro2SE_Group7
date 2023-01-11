@@ -91,6 +91,6 @@ exports.addOrder = async (req, res) => {
     if (req.body.methodInput == 'momo') {
         res.render('cart/paymentWithMomo', { total: total });
     } else {
-        res.redirect('/index');
+        res.redirect('/order');
     }
 }
