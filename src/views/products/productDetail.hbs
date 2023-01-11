@@ -1,0 +1,97 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/product_detail.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<div class="courseDetail">
+    <!-- Begin: Course Detail -->
+    <section class="course_detail spad">
+        <div class="container ">
+            <div class="row border border-gray rounded">
+                <!-- Img -->
+                <div class="col-md-6 px-0">
+                    <img class="img-fluid rounded w-100 h-100" src="/img/product/PM1.jpg"
+                        alt="">
+                </div>
+
+                <!-- Text -->
+                <div class="col-md-6">
+                    <div class="course__details__text">
+                        <h3>Innisfree Airy Eye Shadow Palette</h3>
+                        <div class="course__details__rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <span>1200 reviews</span>
+                            <span>12,001 students</span>
+                        </div>
+                        <div class="course__details__price">$100,00</div>
+                        <p>Innisfree Airy Eye Shadow Palette with micro-powder particles, for thin and smooth makeup, trendy yet natural tones,
+                        suitable for daily use.</p>
+
+                        <div>
+                            <button href="#" type="button" class="btn primary-btn btn_addCart">ADD TO CART</button>
+                        </div>
+                        <button href="#" type="button" class="btn btn-outline-success btn-buy">Buy now</button>
+                        <hr>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+    <!-- End: Course Detail -->
+
+
+    {{!-- Begin: 5 other courses in the same category are bought the most --}}
+    <section class="featured-course">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title featured__product__title">
+                        <h2>Related Products</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <script>
+                    {{!-- const img_arr = ['/student/HTML_COURSE.png', '/student/HTML_COURSE.png', '/student/HTML_COURSE.png', '/student/HTML_COURSE.png', '/student/HTML_COURSE.png'] --}}
+                    const courseName_arr = ['1 Hour HTML', '1 Hour HTML', '1 Hour HTML', '1 Hour HTML', '1 Hour HTML']
+                    const cost_arr = ['$30.00', '$30.00', '$30.00', '$30.00', '$30.00']
+
+                    for (let i = 0; i < 5; i++) {
+                        document.write(`
+                            <div class="m-2">
+                                <div class= "course__item " >
+                                    <div class="course__item__pic set-bg">
+                                        <a href="#">
+                                            <img src="/img/product/PM1.jpg" alt="">
+                                        </a>
+                                        <ul class="course__item__pic__hover">
+                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="course__item__text">
+                                        <h6><a href="#">${courseName_arr[i]}</a></h6>
+                                        <h5>${cost_arr[i]}</h5> 
+                                    </div>
+                                </div>
+                            </div>
+                    `);
+                    }
+                </script>
+            </div>
+        </div>
+    </section>
+    {{!-- End: 5 other courses in the same category are bought the most --}}
+</div>
