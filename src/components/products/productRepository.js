@@ -17,6 +17,21 @@ exports.getAProduct = async (productID) => {
     }
 }
 
+exports.getRelatedProduct = async (productID) => {
+    console.log("here");
+    try {
+        console.log("here" + productID);
+        const poolPromise = db.promise();
+        const result = await poolPromise.query('SELECT PD2.* FROM PRODUCT PD1, PRODUCT PD2 WHERE PD1.PRODUCT_ID = ? AND PD1.PRODUCT_CATEGORY = PD2.PRODUCT_CATEGORY', [productID]);
+        console.log(result[0][0]);
+        return result[0][0];
+    }
+    catch (e) {
+        console.log(e);
+        return [];
+    }
+}
+
 exports.getProductsByPage = async (page) => {
     try {
         const poolPromise = db.promise();

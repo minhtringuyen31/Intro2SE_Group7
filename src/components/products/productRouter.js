@@ -12,6 +12,8 @@ router.get('/filterByBrand/:option', productController.filterByBrand);
 router.get('/filterByCategory/:option', productController.filterByCategory);
 router.post('/search', productController.search);
 
+
+
 // hhman render
 // router.get('/:id', productController.productDetail);
 
