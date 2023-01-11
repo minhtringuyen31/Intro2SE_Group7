@@ -7,14 +7,5 @@ router.get('/', function (req, res, next) {
   res.render('home/index');
 });
 
-//  GET order page
-router.get('/orderPage', function(req, res, next) {
-  res.render('order/order', {layout: false})
-});
-
-// GET product detail page
-router.get('/productDetail', function(req, res, next) {
-  res.render('products/productDetail', {layout: false});
-})
 
 module.exports = router;
