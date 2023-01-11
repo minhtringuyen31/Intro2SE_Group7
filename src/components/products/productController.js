@@ -8,7 +8,7 @@ exports.getDetail = async (req, res) => {
     console.log("alo");
     console.log(productID);
     const result = await productService.getAProduct(productID);
-    console.log("res: " + result);
+    // console.log("res: " + result);
     res.render('products/productDetail', { result: result });
 }
 

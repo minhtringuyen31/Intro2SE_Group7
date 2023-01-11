@@ -1,13 +1,25 @@
 const productService = require('../products/productService');
 const cartRepository = require('./cartRepository');
 
+
+
+exports.cartDetails = async (_userEmail) => {
+    // let check = await cartRepository.hasCart(_userEamil);
+    // if(check === false) 
+    // {
+    //     return []; 
+    // }
+    return await cartRepository.getCartDetail(_userEmail);
+}
+
 exports.addToCart = async (_userEmail, _idProduct) => {
     const quantity = await cartRepository.checkExistProduct(_userEmail, _idProduct);
-    if (quantity === -1 || quantity === null) {
+    console.log("quantity:  " + quantity);
+    if (parseInt(quantity) <= 0 || quantity === null) {
         await cartRepository.addProductToCart(_userEmail, _idProduct);
     }
     else {
-        await cartRepository.updateQuantity(_userEmail, _idProduct, quantity + 1)
+        await cartRepository.updateQuantity(_userEmail, _idProduct, parseInt(quantity) + 1)
     }
 }
 
