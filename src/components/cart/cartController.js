@@ -47,6 +47,12 @@ exports.showCheckout = async (req, res) => {
         res.redirect('/auth/login');
     }
     else {
+
+        const userEmail = req.user.loginEmail;
+        console.log("cartDetail " + userEmail);
+        const products = await cartService.cartDetails(userEmail);
+        console.log(products);
+
         const total = req.params;
         console.log(total);
         const orderInfor = {
@@ -56,6 +62,6 @@ exports.showCheckout = async (req, res) => {
             orderEmail: req.user.loginEmail,
             totalPrice: total
         }
-        res.render('/cart/checkout', { orderInfor });
+        res.render('cart/checkout', { orderInfor: orderInfor, product: products });
     }
 }
