@@ -19,4 +19,11 @@ router.post('/signup', authController.signup);
 
 router.get('/verify-email/:email', authController.verifyEmail);
 
+router.get('/forgotpass', function (req, res, next) {
+  res.render('auth/forgotpass', { layout: false });
+});
+
+router.get('/profiles', function (req, res, next) {
+  res.render('auth/profiles', { layout: false });
+});
 module.exports = router;
