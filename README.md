@@ -1,4 +1,5 @@
 # Intro2SE_Group7
+This course is one of the first courses in software engineering.  
 Ecommerce web application using Node.js | Express.js | MySQL
 
 ## Objective
@@ -12,7 +13,7 @@ Ecommerce web application using Node.js | Express.js | MySQL
 ### Prerequisites
 NPM and Node.js installed
 ### Clone repo
-To get started  you can simply clone this `Intro2SE_Group7` repository and install the dependencies.
+To get started  you can simply clone this `Intro2SE_Group7` repository and install the dependencies.  
 Clone the `Intro2SE_Group7` repository using git:
 ```
 git clone https://github.com/minhtringuyen31/Intro2SE_Group7.git
