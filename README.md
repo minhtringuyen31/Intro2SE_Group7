@@ -32,9 +32,9 @@ npm start
 ```
 ### Access the web application at http://localhost:3000/
 
-## Tecknicak Stack
+## Technical Stack
 * Bootstrap
+* MySQL
 * Node.js
 * Express.js
-* MySQL
 * MVC Model
