@@ -8,7 +8,7 @@ Ecommerce web application using Node.js | Express.js | MySQL
 * The goal is to build a Ecommerce web application where users can buy and sell products online.
 * The project was developed as Full Stack Web app using technologies such as Node.js | Express.js | MySQL
 
-##Getting Started
+## Getting Started
 ### Prerequisites
 NPM and Node.js installed
 ### Clone repo
@@ -19,20 +19,20 @@ git clone https://github.com/minhtringuyen31/Intro2SE_Group7.git
 cd src
 ```
 
-###Installing
+### Installing
 Install dependecies with command:
 ```
 npm install
 ```
 
-###Running the application
+### Running the application
 Open a terminal on the project directory and run application with command:
 ```
 npm start
 ```
-###Access the web application at http://localhost:3000/
+### Access the web application at http://localhost:3000/
 
-##Tecknicak Stack
+## Tecknicak Stack
 * Bootstrap
 * Node.js
 * Express.js
